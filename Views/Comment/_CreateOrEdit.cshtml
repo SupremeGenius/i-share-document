@@ -1,0 +1,52 @@
+@model ISDProject.Models.Comment
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentId)
+    @Html.ValidationMessageFor(model => model.DocumentId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CommentUserName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CommentUserName)
+    @Html.ValidationMessageFor(model => model.CommentUserName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CommentValue)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CommentValue)
+    @Html.ValidationMessageFor(model => model.CommentValue)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CommentRate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CommentRate)
+    @Html.ValidationMessageFor(model => model.CommentRate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CommentCreation)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CommentCreation)
+    @Html.ValidationMessageFor(model => model.CommentCreation)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CommentModification)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CommentModification)
+    @Html.ValidationMessageFor(model => model.CommentModification)
+</div>
+

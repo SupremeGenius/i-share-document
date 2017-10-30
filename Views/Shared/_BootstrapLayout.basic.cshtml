@@ -1,0 +1,81 @@
+@using System.Web.Optimization
+@using BootstrapSupport
+@using NavigationRoutes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/content/css")
+    @RenderSection("head", required: false)
+    @Html.Partial("_html5shiv")
+    @* favicons and touch icons go here *@
+    @RenderSection("Styles", false)
+    <style type="text/css">
+
+        .sidebar-nav {
+        padding: 9px 0;
+        }
+       @@media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <a href="" class="brand"></a> @Html.ActionLink("IShareDocument", "Index", "Home", null, new { @class = "brand" })
+
+                <div class="nav-collapse collapse" style="height: auto;">
+                    <p class="navbar-text pull-right">
+                        @Html.Partial("_LoginPartial")
+                    </p>
+                    <ul class="nav">
+                        <li class="">
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li class="">
+                                @Html.ActionLink("Share", "Index", "Document")
+                            </li>
+                            <li class="">
+                                <a href="#">FAQ</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @Html.Partial("_alerts")
+        @Html.Partial("_validationSummary")
+        @RenderBody()
+        <hr>
+        <footer>
+            <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/js")
+    @RenderSection("Scripts", required: false)
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</body>
+</html>
+

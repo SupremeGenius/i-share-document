@@ -1,0 +1,44 @@
+@model ISDProject.Models.Document
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Document</legend>
+
+    <div class="display-label">DocumentName</div>
+    <div class="display-field">@Model.DocumentName</div>
+
+    <div class="display-label">DocumentPath</div>
+    <div class="display-field">@Model.DocumentPath</div>
+
+    <div class="display-label">DocumentSize</div>
+    <div class="display-field">@Model.DocumentSize</div>
+
+    <div class="display-label">DocumentRate</div>
+    <div class="display-field">@Model.DocumentRate</div>
+
+    <div class="display-label">DocumentUser</div>
+    <div class="display-field">@Model.DocumentUser</div>
+
+    <div class="display-label">DocumentCreation</div>
+    <div class="display-field">@String.Format("{0:g}", Model.DocumentCreation)</div>
+
+    <div class="display-label">DocumentModification</div>
+    <div class="display-field">@String.Format("{0:g}", Model.DocumentModification)</div>
+
+    <div class="display-label">Comments</div>
+    <div class="display-field">@(Model.Comments == null ? "None" : Model.Comments.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

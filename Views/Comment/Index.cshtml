@@ -1,0 +1,71 @@
+@model IEnumerable<ISDProject.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            ObjectId
+        </th>
+        <th>
+            CommentUserName
+        </th>
+        <th>
+            CommentValue
+        </th>
+        <th>
+            CommentRate
+        </th>
+        <th>
+            CommentCreation
+        </th>
+        <th>
+            CommentModification
+        </th>
+        <th>
+            Document
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CommentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CommentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CommentId })
+        </td>
+        <td>
+			@item.ObjectId
+        </td>
+        <td>
+			@item.CommentUserName
+        </td>
+        <td>
+			@item.CommentValue
+        </td>
+        <td>
+			@item.CommentRate
+        </td>
+        <td>
+			@String.Format("{0:g}", item.CommentCreation)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.CommentModification)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Document).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

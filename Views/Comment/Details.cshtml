@@ -1,0 +1,38 @@
+@model ISDProject.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Comment</legend>
+
+    <div class="display-label">ObjectId</div>
+    <div class="display-field">@Model.ObjectId</div>
+
+    <div class="display-label">CommentUserName</div>
+    <div class="display-field">@Model.CommentUserName</div>
+
+    <div class="display-label">CommentValue</div>
+    <div class="display-field">@Model.CommentValue</div>
+
+    <div class="display-label">CommentRate</div>
+    <div class="display-field">@Model.CommentRate</div>
+
+    <div class="display-label">CommentCreation</div>
+    <div class="display-field">@String.Format("{0:g}", Model.CommentCreation)</div>
+
+    <div class="display-label">CommentModification</div>
+    <div class="display-field">@String.Format("{0:g}", Model.CommentModification)</div>
+
+    <div class="display-label">Document</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Document).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CommentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

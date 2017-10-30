@@ -1,0 +1,60 @@
+@model ISDProject.Models.Document
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentName)
+    @Html.ValidationMessageFor(model => model.DocumentName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentPath)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentPath)
+    @Html.ValidationMessageFor(model => model.DocumentPath)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentSize)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentSize)
+    @Html.ValidationMessageFor(model => model.DocumentSize)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentRate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentRate)
+    @Html.ValidationMessageFor(model => model.DocumentRate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentUser)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentUser)
+    @Html.ValidationMessageFor(model => model.DocumentUser)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentCreation)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentCreation)
+    @Html.ValidationMessageFor(model => model.DocumentCreation)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DocumentModification)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DocumentModification)
+    @Html.ValidationMessageFor(model => model.DocumentModification)
+</div>
+

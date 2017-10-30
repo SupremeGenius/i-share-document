@@ -1,0 +1,10 @@
+﻿@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Gérer" }) <span>|</span>
+    <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+}
+else
+{
+    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) <span>|</span>
+    @Html.ActionLink("Log In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+}

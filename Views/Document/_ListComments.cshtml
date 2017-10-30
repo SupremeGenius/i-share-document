@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ISDProject.Models.Comment>
+<fieldset>
+    <legend>Comments (@(Model == null ? "0" : Model.Count().ToString()))</legend>
+    @foreach (var item in Model)
+    {
+        <blockquote>
+            <p>@item.CommentValue</p>
+            @{
+                int starOff = 5 - item.CommentRate;
+        for (int i = 0; i < item.CommentRate; i++)
+        {
+                <img src="~/Content/images/star-on.png" />
+        }
+                for (int i = 0; i < starOff; i++)
+        {
+                <img src="~/Content/images/star-off.png" />
+        }
+            }
+            <small>@item.CommentUserName <cite title="Source Title">@item.CommentCreation</cite></small>
+        </blockquote> 
+    }
+
+</fieldset>
